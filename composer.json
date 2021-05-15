@@ -34,7 +34,7 @@
 		"cache/integration-tests": "^0.17.0",
 		"codeigniter4/codeigniter4": "dev-develop",
 		"codeigniter4/codeigniter4-standard": "^1.0",
-		"phpstan/phpstan": "0.12.86",
+		"phpstan/phpstan": "0.12.87",
 		"phpunit/phpunit": "^9.1",
 		"squizlabs/php_codesniffer": "^3.3"
 	},
