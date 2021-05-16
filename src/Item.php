@@ -123,7 +123,7 @@ final class Item implements CacheItemInterface
 	 * Note: This method MUST NOT have a race condition between calling isHit()
 	 * and calling get().
 	 *
-	 * @return boolean
+	 * @return bool
 	 *   True if the request resulted in a cache hit. False otherwise.
 	 */
 	public function isHit(): bool
@@ -237,7 +237,7 @@ final class Item implements CacheItemInterface
 	 *
 	 * @see https://groups.google.com/g/php-fig/c/Qr4OxCf7J5Y
 	 *
-	 * @return boolean True if this Item is expired.
+	 * @return bool True if this Item is expired.
 	 */
 	public function isExpired(): bool
 	{
