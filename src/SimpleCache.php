@@ -66,7 +66,7 @@ final class SimpleCache implements CacheInterface
 		// Get TTL as an integer (seconds)
 		if (is_null($ttl))
 		{
-			$ttl = 60;
+			$ttl = config('Cache')->ttl ?? 60;
 		}
 		elseif ($ttl instanceof DateInterval)
 		{

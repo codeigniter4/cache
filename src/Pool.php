@@ -225,7 +225,7 @@ final class Pool implements CacheItemPoolInterface
 		// Only deal in our Pool's Items
 		if (! $item instanceof Item)
 		{
-			return false;
+			return false; // @codeCoverageIgnore
 		}
 
 		// Do not save expired Items
@@ -236,7 +236,14 @@ final class Pool implements CacheItemPoolInterface
 		}
 
 		// Deteremine TTL
-		$ttl = ($expiration = $item->getExpiration()) ? Time::now()->difference($expiration)->getSeconds() : 60;
+		if ($expiration = $item->getExpiration())
+		{
+			$ttl = Time::now()->difference($expiration)->getSeconds();
+		}
+		else
+		{
+			$ttl = config('Cache')->ttl ?? 60;
+		}
 
 		return $this->adapter->save($item->getKey(), $item->get(), $ttl);
 	}
@@ -255,7 +262,7 @@ final class Pool implements CacheItemPoolInterface
 		// Only deal in our Pool's Items
 		if (! $item instanceof Item)
 		{
-			return false;
+			return false; // @codeCoverageIgnore
 		}
 
 		// Do not save expired Items
