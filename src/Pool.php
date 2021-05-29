@@ -225,7 +225,7 @@ final class Pool implements CacheItemPoolInterface
 		// Only deal in our Pool's Items
 		if (! $item instanceof Item)
 		{
-			return false;
+			return false; // @codeCoverageIgnore
 		}
 
 		// Do not save expired Items
@@ -262,7 +262,7 @@ final class Pool implements CacheItemPoolInterface
 		// Only deal in our Pool's Items
 		if (! $item instanceof Item)
 		{
-			return false;
+			return false; // @codeCoverageIgnore
 		}
 
 		// Do not save expired Items
