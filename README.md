@@ -1,8 +1,9 @@
 # CodeIgniter 4 PSR Cache
 PSR-6 and PSR-16 Cache Adapters for CodeIgniter 4 
 
-[![](https://github.com/codeigniter4/cache/workflows/PHPUnit/badge.svg)](https://github.com/codeigniter4/cache/actions?query=workflow%3A%22PHPUnit%22)
-[![](https://github.com/codeigniter4/cache/workflows/PHPStan/badge.svg)](https://github.com/codeigniter4/cache/actions?query=workflow%3A%PHPStan%22)
+[![](https://github.com/codeigniter4/cache/workflows/PHPUnit/badge.svg)](https://github.com/codeigniter4/cache/actions/workflows/test.yml)
+[![](https://github.com/codeigniter4/cache/workflows/PHPStan/badge.svg)](https://github.com/codeigniter4/cache/actions/workflows/analyze.yml)
+[![](https://github.com/codeigniter4/cache/workflows/Deptrac/badge.svg)](https://github.com/codeigniter4/cache/actions/workflows/inspect.yml)
 [![Coverage Status](https://coveralls.io/repos/github/codeigniter4/cache/badge.svg?branch=develop)](https://coveralls.io/github/codeigniter4/cache?branch=develop)
 
 **Disclaimer: CodeIgniter 4 comes with a fully-functional cache component! This module
