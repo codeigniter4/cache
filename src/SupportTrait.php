@@ -22,39 +22,32 @@ use Config\Cache;
  */
 trait SupportTrait
 {
-	/**
-	 * The adapter to use.
-	 *
-	 * @var CacheInterface
-	 */
-	private $adapter;
+    /**
+     * The adapter to use.
+     *
+     * @var CacheInterface
+     */
+    private $adapter;
 
-	/**
-	 * Initializes the underlying adapter
-	 * from an existing instance or from the
-	 * Cache Service (with optional config).
-	 *
-	 * @param object|null $object
-	 *
-	 * @throws CacheArgumentException
-	 */
-	public function __construct($object = null)
-	{
-		if (is_null($object))
-		{
-			$this->adapter = service('cache');
-		}
-		elseif ($object instanceof Cache)
-		{
-			$this->adapter = service('cache', $object, false);
-		}
-		elseif ($object instanceof CacheInterface)
-		{
-			$this->adapter = $object;
-		}
-		else
-		{
-			throw new CacheArgumentException(get_class() . ' constructor only accepts an adapter or configuration');
-		}
-	}
+    /**
+     * Initializes the underlying adapter
+     * from an existing instance or from the
+     * Cache Service (with optional config).
+     *
+     * @param object|null $object
+     *
+     * @throws CacheArgumentException
+     */
+    public function __construct($object = null)
+    {
+        if (null === $object) {
+            $this->adapter = service('cache');
+        } elseif ($object instanceof Cache) {
+            $this->adapter = service('cache', $object, false);
+        } elseif ($object instanceof CacheInterface) {
+            $this->adapter = $object;
+        } else {
+            throw new CacheArgumentException(__CLASS__ . ' constructor only accepts an adapter or configuration');
+        }
+    }
 }
