@@ -28,7 +28,7 @@
     },
     "provide": {
         "psr/cache-implementation": "^1.0",
-        "psr/simple-cache-implementation": "^1.0"
+        "psr/simple-cache-implementation": "^1.0 || ^3.0"
     },
     "require-dev": {
         "cache/integration-tests": "^0.17.0",
