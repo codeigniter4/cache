@@ -47,7 +47,7 @@ trait SupportTrait
         } elseif ($object instanceof CacheInterface) {
             $this->adapter = $object;
         } else {
-            throw new CacheArgumentException(__CLASS__ . ' constructor only accepts an adapter or configuration');
+            throw new CacheArgumentException(self::class . ' constructor only accepts an adapter or configuration');
         }
     }
 }
