@@ -33,7 +33,7 @@
     "require-dev": {
         "cache/integration-tests": "^0.17.0",
         "codeigniter/coding-standard": "^1.1",
-        "codeigniter4/codeigniter4": "dev-develop",
+        "codeigniter4/framework": "^4.1",
         "nexusphp/cs-config": "^3.1",
         "nexusphp/tachycardia": "^1.0",
         "php-coveralls/php-coveralls": "^2.4",
@@ -51,12 +51,6 @@
             "Tests\\Support\\": "tests/_support"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/codeigniter4/CodeIgniter4"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
