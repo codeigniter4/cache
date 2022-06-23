@@ -24,7 +24,7 @@ final class Pool implements CacheItemPoolInterface
      *
      * @var array<string, Item>
      */
-    private $deferred = [];
+    private array $deferred = [];
 
     /**
      * Commits any deferred Items.
@@ -47,7 +47,6 @@ final class Pool implements CacheItemPoolInterface
      *                                If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
      *                                MUST be thrown.
      *
-     * @return CacheItemInterface
      *                            The corresponding Cache Item.
      */
     public function getItem($key): CacheItemInterface
@@ -87,7 +86,6 @@ final class Pool implements CacheItemPoolInterface
      *                                If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
      *                                MUST be thrown.
      *
-     * @return array
      *               A traversable collection of Cache Items keyed by the cache keys of
      *               each item. A Cache item will be returned for each key, even if that
      *               key is not found. However, if no keys are specified then an empty
@@ -120,7 +118,6 @@ final class Pool implements CacheItemPoolInterface
      *                                If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
      *                                MUST be thrown.
      *
-     * @return bool
      *              True if item exists in the cache, false otherwise.
      */
     public function hasItem($key): bool
@@ -158,7 +155,6 @@ final class Pool implements CacheItemPoolInterface
      *                                If the $key string is not a legal value a \Psr\Cache\InvalidArgumentException
      *                                MUST be thrown.
      *
-     * @return bool
      *              True if the item was successfully removed. False if there was an error.
      */
     public function deleteItem($key): bool
@@ -189,7 +185,6 @@ final class Pool implements CacheItemPoolInterface
      *                                If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
      *                                MUST be thrown.
      *
-     * @return bool
      *              True if the items were successfully removed. False if there was an error.
      */
     public function deleteItems(array $keys): bool
@@ -209,7 +204,6 @@ final class Pool implements CacheItemPoolInterface
     /**
      * Persists a cache item immediately.
      *
-     * @param CacheItemInterface $item
      *                                 The cache item to save.
      *
      * @return bool
@@ -242,10 +236,7 @@ final class Pool implements CacheItemPoolInterface
     /**
      * Sets a cache item to be persisted later.
      *
-     * @param CacheItemInterface $item
      *                                 The cache item to save.
-     *
-     * @return bool
      *              False if the item could not be queued or if a commit was attempted and failed. True otherwise.
      */
     public function saveDeferred(CacheItemInterface $item): bool
@@ -268,7 +259,6 @@ final class Pool implements CacheItemPoolInterface
     /**
      * Persists any deferred cache items.
      *
-     * @return bool
      *              True if all not-yet-saved items were successfully saved or there were none. False otherwise.
      */
     public function commit(): bool

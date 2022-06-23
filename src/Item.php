@@ -27,10 +27,7 @@ final class Item implements CacheItemInterface
      */
     public const RESERVED_CHARACTERS = '{}()/\@:';
 
-    /**
-     * @var string
-     */
-    private $key;
+    private string $key;
 
     /**
      * @var mixed
@@ -40,17 +37,13 @@ final class Item implements CacheItemInterface
     /**
      * Whether this Item was the result
      * of a cache hit.
-     *
-     * @var bool
      */
-    private $hit;
+    private bool $hit;
 
     /**
      * The expiration time
-     *
-     * @var Time|null
      */
-    private $expiration;
+    private ?Time $expiration = null;
 
     /**
      * Validates a cache key according to PSR-6.
@@ -87,7 +80,6 @@ final class Item implements CacheItemInterface
      * The key is loaded by the Implementing Library, but should be available to
      * the higher level callers when needed.
      *
-     * @return string
      *                The key string for this cache item.
      */
     public function getKey(): string
@@ -118,7 +110,6 @@ final class Item implements CacheItemInterface
      * Note: This method MUST NOT have a race condition between calling isHit()
      * and calling get().
      *
-     * @return bool
      *              True if the request resulted in a cache hit. False otherwise.
      */
     public function isHit(): bool
@@ -136,7 +127,6 @@ final class Item implements CacheItemInterface
      * @param mixed $value
      *                     The serializable value to be stored.
      *
-     * @return static
      *                The invoked object.
      */
     public function set($value): self
@@ -155,7 +145,6 @@ final class Item implements CacheItemInterface
      *                                           the value should be stored permanently or for as long as the
      *                                           implementation allows.
      *
-     * @return static
      *                The called object.
      */
     public function expiresAt($expiration): self
@@ -181,7 +170,6 @@ final class Item implements CacheItemInterface
      *                                    If none is set, the value should be stored permanently or for as long as the
      *                                    implementation allows.
      *
-     * @return static
      *                The called object.
      */
     public function expiresAfter($time): self

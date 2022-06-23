@@ -56,7 +56,7 @@ final class NonPsrTest extends CIUnitTestCase
         $this->expectException(CacheArgumentException::class);
         $this->expectExceptionMessage('CodeIgniter\Psr\Cache\SimpleCache constructor only accepts an adapter or configuration');
 
-        $psr = new SimpleCache(42); // @phpstan-ignore-line
+        new SimpleCache(42); // @phpstan-ignore-line
     }
 
     //--------------------------------------------------------------------
