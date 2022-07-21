@@ -16,7 +16,7 @@ is only for integrating third-party packages that rely on the PSR interface prov
 2. Integrate with your favorite packages:
 
 ```php
-use CodeIgniter\Psr\Cache\SimeplCache;
+use CodeIgniter\Psr\Cache\SimpleCache;
 use Kreait\Firebase\Factory;
 ...
 
