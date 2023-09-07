@@ -18,12 +18,20 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Install roave/backward-compatibility-check.
+        run: composer require --dev roave/backward-compatibility-check
+
       - name: Run comparison (limited)
         if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name }}
-        uses: docker://nyholm/roave-bc-check-ga
+        run: vendor/bin/roave-backward-compatibility-check
 
       - name: Run comparison (authenticated)
         if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name }}
-        uses: docker://nyholm/roave-bc-check-ga
+        run: vendor/bin/roave-backward-compatibility-check
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
