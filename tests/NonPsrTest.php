@@ -59,7 +59,7 @@ final class NonPsrTest extends CIUnitTestCase
         new SimpleCache(42); // @phpstan-ignore-line
     }
 
-    //--------------------------------------------------------------------
+    // --------------------------------------------------------------------
 
     public function testItemExpiresAtThrowsException()
     {

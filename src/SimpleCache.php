@@ -25,10 +25,10 @@ final class SimpleCache implements CacheInterface
      * @param string $key     The unique key of this item in the cache.
      * @param mixed  $default Default value to return if the key does not exist.
      *
+     * @return mixed The value of the item from the cache, or $default in case of cache miss.
+     *
      * @throws CacheArgumentException
      *                                MUST be thrown if the $key string is not a legal value.
-     *
-     * @return mixed The value of the item from the cache, or $default in case of cache miss.
      */
     public function get($key, $default = null)
     {
@@ -53,10 +53,10 @@ final class SimpleCache implements CacheInterface
      *                                     the driver supports TTL then the library may set a default value
      *                                     for it or let the driver take care of that.
      *
+     * @return bool True on success and false on failure.
+     *
      * @throws CacheArgumentException
      *                                MUST be thrown if the $key string is not a legal value.
-     *
-     * @return bool True on success and false on failure.
      */
     public function set($key, $value, $ttl = null)
     {
@@ -86,10 +86,10 @@ final class SimpleCache implements CacheInterface
      *
      * @param string $key The unique cache key of the item to delete.
      *
+     * @return bool True if the item was successfully removed. False if there was an error.
+     *
      * @throws CacheArgumentException
      *                                MUST be thrown if the $key string is not a legal value.
-     *
-     * @return bool True if the item was successfully removed. False if there was an error.
      */
     public function delete($key)
     {
@@ -119,11 +119,11 @@ final class SimpleCache implements CacheInterface
      * @param iterable $keys    A list of keys that can obtained in a single operation.
      * @param mixed    $default Default value to return for keys that do not exist.
      *
+     * @return iterable A list of key => value pairs. Cache keys that do not exist or are stale will have $default as value.
+     *
      * @throws CacheArgumentException
      *                                MUST be thrown if $keys is neither an array nor a Traversable,
      *                                or if any of the $keys are not a legal value.
-     *
-     * @return iterable A list of key => value pairs. Cache keys that do not exist or are stale will have $default as value.
      */
     public function getMultiple($keys, $default = null)
     {
@@ -150,11 +150,11 @@ final class SimpleCache implements CacheInterface
      *                                      the driver supports TTL then the library may set a default value
      *                                      for it or let the driver take care of that.
      *
+     * @return bool True on success and false on failure.
+     *
      * @throws CacheArgumentException
      *                                MUST be thrown if $values is neither an array nor a Traversable,
      *                                or if any of the $values are not a legal value.
-     *
-     * @return bool True on success and false on failure.
      */
     public function setMultiple($values, $ttl = null)
     {
@@ -182,11 +182,11 @@ final class SimpleCache implements CacheInterface
      *
      * @param iterable $keys A list of string-based keys to be deleted.
      *
+     * @return bool True if the items were successfully removed. False if there was an error.
+     *
      * @throws CacheArgumentException
      *                                MUST be thrown if $keys is neither an array nor a Traversable,
      *                                or if any of the $keys are not a legal value.
-     *
-     * @return bool True if the items were successfully removed. False if there was an error.
      */
     public function deleteMultiple($keys)
     {
@@ -216,10 +216,10 @@ final class SimpleCache implements CacheInterface
      *
      * @param string $key The cache item key.
      *
+     * @return bool
+     *
      * @throws CacheArgumentException
      *                                MUST be thrown if the $key string is not a legal value.
-     *
-     * @return bool
      */
     public function has($key)
     {
