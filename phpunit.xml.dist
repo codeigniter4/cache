@@ -37,7 +37,7 @@
 	</coverage>
 
 	<testsuites>
-		<testsuite name="CacheIntegration">
+		<testsuite name="main">
 			<directory>./tests</directory>
 		</testsuite>
 	</testsuites>
