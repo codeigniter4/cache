@@ -30,7 +30,7 @@
         "cache/integration-tests": "^0.17.0",
         "codeigniter4/devkit": "^1.0",
         "codeigniter4/framework": "^4.1",
-        "rector/rector": "0.19.2"
+        "rector/rector": "0.19.5"
     },
     "provide": {
         "psr/cache-implementation": "^1.0",
