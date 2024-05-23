@@ -79,8 +79,8 @@ final class Pool implements CacheItemPoolInterface
     /**
      * Returns a traversable set of cache items.
      *
-     * @param string[] $keys
-     *                       An indexed array of keys of items to retrieve.
+     * @param list<string> $keys
+     *                           An indexed array of keys of items to retrieve.
      *
      * @throws CacheArgumentException
      *                                If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
@@ -178,8 +178,8 @@ final class Pool implements CacheItemPoolInterface
     /**
      * Removes multiple items from the pool.
      *
-     * @param string[] $keys
-     *                       An array of keys that should be removed from the pool.
+     * @param list<string> $keys
+     *                           An array of keys that should be removed from the pool.
      *
      * @throws CacheArgumentException
      *                                If any of the keys in $keys are not a legal value a \Psr\Cache\InvalidArgumentException
